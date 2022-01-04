@@ -20,12 +20,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Print hello Message
+    - name: Print hello Message in dev
       run : echo "Hello world from job_01"
               
   my_test_job_02:
     runs-on: ubuntu-latest
+    needs: [my_test_job_01]
     steps:
-    - name: Print hello Message
+    - name: Print hello Message in prod
       run : echo "Hello world from job_02"
      
