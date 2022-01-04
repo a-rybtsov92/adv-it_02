@@ -54,7 +54,7 @@ jobs:
     - name: Available app zip
       run : zip --version
 
-    - name: Show vars
+    - name: Show all vars
       run : |
         echo "Var1 = ${{ env.VAR1 }}"
         echo "Var2 = ${{ env.VAR2 }}"
