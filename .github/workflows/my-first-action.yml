@@ -13,7 +13,7 @@ on:
    
 jobs:
   my_test_job_01:
-    runs-on: ubuntu-latest1111
+    runs-on: ubuntu-latest
 
     steps:
     - name: Print hello Message in test
