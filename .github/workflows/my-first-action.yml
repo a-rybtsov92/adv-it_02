@@ -4,8 +4,8 @@
 
 name: My-First-Basic-Action
 env:
-  APP_NAME : "MyApp"
-  PACK_NAME: "app-deploy-ver-${{ github.sha }}"
+  APP_NAME  : "MyApp"
+  PACK_NAME : "app-deploy-ver-${{ github.sha }}"
 on:
   push:
     branches: 
@@ -18,12 +18,15 @@ jobs:
     steps:
     - name: Print hello Message in test
       run : echo "Hello world from job_01"
+    
     - name: Execute few commands
       run : |
         echo "Hello Message 1"
         echo "Hello Message 2"
         echo "App name: ${{ env.APP_NAME }}"
-        
+    
+    - name: List current folder
+      run : ls -la
               
   my_test_job_02:
     runs-on: ubuntu-latest
@@ -33,5 +36,5 @@ jobs:
     - name: Print hello Message in deploy
       run : echo "Hello world from job_02"
      
-    - name: Printing Deploymentpackege
+    - name: Printing Deployment packege
       run : echo "Deploy packege name is ${{ env.PACK_NAME }}"
