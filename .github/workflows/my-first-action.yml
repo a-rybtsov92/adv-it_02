@@ -3,30 +3,35 @@
 #--------------------------------------------------------------------------------------
 
 name: My-First-Basic-Action
-
-# Controls when the workflow will run
+env:
+  APP_NAME : "MyApp"
+  PACK_NAME: "app-deploy-ver-${{ github.sha }}"
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: 
      - main
    
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   my_test_job_01:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Print hello Message in dev
+    - name: Print hello Message in test
       run : echo "Hello world from job_01"
+    - name: Execute few commands
+      run : |
+        echo "Hello Message 1"
+        echo "Hello Message 2"
+        echo "App name: ${{ env.APP_NAME }}"
+        
               
   my_test_job_02:
     runs-on: ubuntu-latest
     needs: [my_test_job_01]
+    
     steps:
-    - name: Print hello Message in prod
+    - name: Print hello Message in deploy
       run : echo "Hello world from job_02"
      
+    - name: Printing Deploymentpackege
+      run : echo "Deploy packege name is ${{ env.PACK_NAME }}"
