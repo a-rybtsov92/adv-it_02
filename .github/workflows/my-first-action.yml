@@ -48,10 +48,10 @@ jobs:
     - name: Printing Deployment packege
       run : echo "Deploy packege name is ${{ env.PACK_NAME }}"
       
-    - name: Avaialble app
+    - name: Avaialble app aws
       run : aws --version
       
-    - name: Available app
+    - name: Available app zip
       run : zip --version
 
     - name: Show vars
