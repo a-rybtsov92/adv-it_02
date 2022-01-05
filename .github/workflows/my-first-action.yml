@@ -5,7 +5,7 @@
 name: My-First-Basic-Action
 env:
   APP_NAME  : "MyApp"
-  PACK_NAME : "app-deploy-ver-${{ github.GITHUB_SHA }}"
+  PACK_NAME : "app-deploy-ver-${{ env.GITHUB_SHA }}"
 on:
   push:
     branches: 
