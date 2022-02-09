@@ -2,7 +2,7 @@
 # This is a basic workflow to help you get started with Actions
 #--------------------------------------------------------------------------------------
 
-name: My-First-Basic-Action
+name: My-GitHubAction-Basics
 env:
   APP_NAME  : "MyApp"
   PACK_NAME : "app-deploy-ver-${{ github.sha }}"
